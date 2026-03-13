@@ -1,0 +1,182 @@
+------------------------------------------------
+PYTHON PRACTICE PROGRAMS (HACKERRANK AND BASIC)
+------------------------------------------------
+
+------------------------------------------------
+1. Solve Me First
+------------------------------------------------
+
+Link:
+https://www.hackerrank.com/challenges/solve-me-first/problem
+
+Program to add two numbers.
+
+def addNumbers(x, y):
+    return x + y
+
+a = int(input())
+b = int(input())
+
+answer = addNumbers(a, b)
+print(answer)
+
+Example
+
+Input
+2
+3
+
+Output
+5
+
+
+------------------------------------------------
+2. Simple Array Sum
+------------------------------------------------
+
+Link:
+https://www.hackerrank.com/challenges/simple-array-sum/problem
+
+Program to find the sum of elements in a list.
+
+def arraySum(arr):
+    total = 0
+    for val in arr:
+        total = total + val
+    return total
+
+count = int(input())
+arr = list(map(int, input().split()))
+
+result = arraySum(arr)
+print(result)
+
+
+------------------------------------------------
+3. Find Maximum and Minimum in a List
+------------------------------------------------
+
+Program to find largest and smallest number.
+
+def findMaxMin(arr):
+    max_val = arr[0]
+    min_val = arr[0]
+
+    for num in arr:
+        if num > max_val:
+            max_val = num
+        if num < min_val:
+            min_val = num
+
+    print("Largest value:", max_val)
+    print("Smallest value:", min_val)
+
+
+n = int(input("Enter range: "))
+arr = []
+
+for i in range(n):
+    value = int(input("Enter number: "))
+    arr.append(value)
+
+findMaxMin(arr)
+
+
+------------------------------------------------
+4. Different Ways of Taking Input in Python
+------------------------------------------------
+
+# Single input
+n = int(input())
+
+# Two inputs separately
+a = int(input())
+b = int(input())
+
+# Two inputs in one line
+x, y = map(int, input().split())
+
+# List input
+numbers = list(map(int, input().split()))
+
+# Using eval
+values = eval(input())
+
+
+------------------------------------------------
+5. Remove Duplicate Elements from a List
+------------------------------------------------
+
+def removeDuplicates(arr):
+    new_list = []
+    for item in arr:
+        if item not in new_list:
+            new_list.append(item)
+    return new_list
+
+n = int(input("Enter range: "))
+arr = []
+
+for i in range(n):
+    value = int(input("Enter number: "))
+    arr.append(value)
+
+print(removeDuplicates(arr))
+
+
+------------------------------------------------
+6. Pattern Using While Loop
+------------------------------------------------
+
+i = 1
+j = 10
+
+while i < j:
+
+    if i == 3 and j == 8:
+        i += 1
+        j -= 1
+        continue
+
+    print(i, "\t", j)
+
+    i += 1
+    j -= 1
+
+Output
+
+1    10
+2     9
+4     7
+5     6
+
+
+------------------------------------------------
+7. Alternate Positive and Negative Numbers
+------------------------------------------------
+
+data = [1, -2, 3, -4, -1, 4]
+
+positive = []
+negative = []
+
+# separate numbers
+for val in data:
+    if val >= 0:
+        positive.append(val)
+    else:
+        negative.append(val)
+
+final_list = []
+i = j = 0
+
+while i < len(positive) and j < len(negative):
+    final_list.append(positive[i])
+    final_list.append(negative[j])
+    i += 1
+    j += 1
+
+final_list.extend(positive[i:])
+final_list.extend(negative[j:])
+
+print(final_list)
