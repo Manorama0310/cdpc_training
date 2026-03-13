@@ -1,0 +1,82 @@
+--------------------------------------------------
+PYTHON PATTERN PROGRAMS
+--------------------------------------------------
+
+1] Series Program
+--------------------------------------------------
+
+x = int(input("Enter x value: "))
+n = int(input("Enter number of terms: "))
+
+result = 1
+
+for k in range(1, n+1):
+    result = result + (x ** k) / k
+
+print("Series Sum =", result)
+
+
+
+--------------------------------------------------
+
+2] Number Pattern
+--------------------------------------------------
+
+for r in range(1, 5):
+    for c in range(4):
+        print(r, end=" ")
+    print()
+
+
+
+--------------------------------------------------
+
+3] Continuous Number Pattern
+--------------------------------------------------
+
+value = 1
+
+for r in range(4):
+    for c in range(4):
+        print(value, end="\t")
+        value += 1
+    print()
+
+
+
+--------------------------------------------------
+
+4] Alphabet Pattern
+--------------------------------------------------
+
+letter = 65
+
+for r in range(4):
+    for c in range(4):
+        print(chr(letter), end=" ")
+        letter += 1
+    print()
+
+
+
+--------------------------------------------------
+
+5] Increasing Number Pattern
+--------------------------------------------------
+
+for r in range(1, 5):
+    for c in range(r):
+        print(r, end=" ")
+    print()
+
+
+
+--------------------------------------------------
+
+6] Star Pattern
+--------------------------------------------------
+
+for r in range(4):
+    for c in range(4 - r):
+        print("*", end=" ")
+    print()
