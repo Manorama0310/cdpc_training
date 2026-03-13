@@ -1,0 +1,77 @@
+---------------------------------------------
+Program 1: Reverse a Three Digit Number
+---------------------------------------------
+
+num = int(input("Enter a three digit number: "))
+
+last = num % 10
+num = num // 10
+
+middle = num % 10
+first = num // 10
+
+result = (last * 100) + (middle * 10) + first
+
+print("Reversed number:", result)
+
+
+
+---------------------------------------------
+Program 2: Linear Loop Example O(n)
+---------------------------------------------
+
+n = int(input("Enter a number: "))
+
+for i in range(n):
+    print("Value =", i)
+
+
+
+---------------------------------------------
+Program 3: Nested Loop Example O(n^2)
+---------------------------------------------
+
+size = int(input("Enter size: "))
+
+for a in range(size):
+    for b in range(size):
+        print(a, b)
+
+
+
+---------------------------------------------
+Program 4: Logarithmic Loop O(log n)
+---------------------------------------------
+
+value = int(input("Enter a number: "))
+
+while value > 1:
+    print("Current value:", value)
+    value = value // 2
+
+
+
+---------------------------------------------
+Program 5: Sequential Loops Example O(n)
+---------------------------------------------
+
+limit = int(input("Enter limit: "))
+
+for i in range(limit):
+    print(i)
+
+for j in range(limit):
+    print(j)
+
+
+
+---------------------------------------------
+Program 6: Grid Example O(h × w)
+---------------------------------------------
+
+height = int(input("Enter height: "))
+width = int(input("Enter width: "))
+
+for row in range(height):
+    for col in range(width):
+        print(row, col)
