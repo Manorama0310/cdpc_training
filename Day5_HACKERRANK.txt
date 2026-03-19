@@ -1,0 +1,160 @@
+PYTHON HACKERRANK QUESTIONS
+---------------------------
+
+
+------------------------------------------------
+1. Compare the Triplets
+------------------------------------------------
+
+Link:
+https://www.hackerrank.com/challenges/compare-the-triplets/problem
+
+Program to compare the scores of two participants.
+
+def compare_points(a, b):
+    score_a = 0
+    score_b = 0
+
+    for i in range(3):
+        if a[i] > b[i]:
+            score_a += 1
+        elif a[i] < b[i]:
+            score_b += 1
+
+    return score_a, score_b
+
+
+Example
+
+Input
+5 6 7
+3 6 10
+
+Output
+1 1
+
+
+------------------------------------------------
+2. A Very Big Sum
+------------------------------------------------
+
+Link:
+https://www.hackerrank.com/challenges/a-very-big-sum/problem
+
+Program to compute the sum of very large integers.
+
+def veryBigSum(arr):
+    result = 0
+    for num in arr:
+        result += num
+    return result
+
+
+Example
+
+Input
+5
+1000000001 1000000002 1000000003 1000000004 1000000005
+
+Output
+5000000015
+
+
+------------------------------------------------
+3. Diagonal Difference
+------------------------------------------------
+
+Link:
+https://www.hackerrank.com/challenges/diagonal-difference/problem
+
+Program to calculate the absolute difference between the two diagonals of a square matrix.
+
+def findDiagonalDifference(matrix):
+    primary = 0
+    secondary = 0
+    size = len(matrix)
+
+    for i in range(size):
+        primary += matrix[i][i]
+        secondary += matrix[i][size - 1 - i]
+
+    return abs(primary - secondary)
+
+
+Example
+
+Input
+3
+11 2 4
+4 5 6
+10 8 -12
+
+Output
+15
+
+
+------------------------------------------------
+4. Plus Minus
+------------------------------------------------
+
+Link:
+https://www.hackerrank.com/challenges/plus-minus/problem
+
+Program to calculate the fraction of positive, negative, and zero elements.
+
+def plus_minus(arr):
+    total = len(arr)
+
+    pos = 0
+    neg = 0
+    zero = 0
+
+    for val in arr:
+        if val > 0:
+            pos += 1
+        elif val < 0:
+            neg += 1
+        else:
+            zero += 1
+
+    print(f"{pos/total:.6f}")
+    print(f"{neg/total:.6f}")
+    print(f"{zero/total:.6f}")
+
+
+Example
+
+Input
+6
+-4 3 -9 0 4 1
+
+Output
+0.500000
+0.333333
+0.166667
+
+
+------------------------------------------------
+5. Rotate Array
+------------------------------------------------
+
+Program to rotate elements of an array by a given number of positions.
+
+arr = eval(input("Enter list: "))
+k = int(input("Enter number of rotations: "))
+
+size = len(arr)
+
+arr = arr[size - k:] + arr[:size - k]
+
+print(arr)
+
+
+Example
+
+Input
+[2, 4, 5, 6, 2]
+3
+
+Output
+[5, 6, 2, 2, 4]
