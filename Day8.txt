@@ -1,0 +1,139 @@
+PYTHON DSA AND LEETCODE PROGRAMS
+--------------------------------
+
+
+------------------------------------------------
+1. Two Sum
+------------------------------------------------
+
+Link:
+https://leetcode.com/problems/two-sum/
+
+Program to find two indices such that their sum equals the target.
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        lookup = {}
+
+        for i, num in enumerate(nums):
+            complement = target - num
+
+            if complement in lookup:
+                return [lookup[complement], i]
+
+            lookup[num] = i
+
+
+
+------------------------------------------------
+2. Fizz Buzz
+------------------------------------------------
+
+Link:
+https://leetcode.com/problems/fizz-buzz/
+
+Program to print numbers from 1 to n with conditions:
+Multiples of 3 → "Fizz"
+Multiples of 5 → "Buzz"
+Multiples of both → "FizzBuzz"
+
+class Solution(object):
+    def fizzBuzz(self, n):
+        result = []
+
+        for i in range(1, n + 1):
+            if i % 15 == 0:
+                result.append("FizzBuzz")
+            elif i % 3 == 0:
+                result.append("Fizz")
+            elif i % 5 == 0:
+                result.append("Buzz")
+            else:
+                result.append(str(i))
+
+        return result
+
+
+
+------------------------------------------------
+3. Running Sum of 1D Array
+------------------------------------------------
+
+Link:
+https://leetcode.com/problems/running-sum-of-1d-array/
+
+Program to compute cumulative sum of array elements.
+
+class Solution(object):
+    def runningSum(self, nums):
+        for i in range(1, len(nums)):
+            nums[i] += nums[i - 1]
+
+        return nums
+
+
+
+------------------------------------------------
+4. Stack Implementation
+------------------------------------------------
+
+Program to implement stack using list.
+
+class Stack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, item):
+        self.stack.append(item)
+
+    def pop(self):
+        if self.is_empty():
+            return None
+        return self.stack.pop()
+
+    def peek(self):
+        if self.is_empty():
+            return None
+        return self.stack[-1]
+
+    def is_empty(self):
+        return len(self.stack) == 0
+
+
+# Example usage
+
+s = Stack()
+
+s.push(10)
+s.push(20)
+s.push(30)
+
+print("Top element:", s.peek())
+print("Popped element:", s.pop())
+print("Stack after pop:", s.stack)
+
+
+
+------------------------------------------------
+5. Next Greater Element (Nearest Larger Number)
+------------------------------------------------
+
+Program to find the next greater element for each element in the array.
+
+def next_greater_elements(arr):
+    result = [-1] * len(arr)
+    stack = []
+
+    for i, value in enumerate(arr):
+        while stack and value > arr[stack[-1]]:
+            result[stack.pop()] = value
+
+        stack.append(i)
+
+    return result
+
+
+# Example
+
+arr = list(map(int, input("Enter array elements: ").split()))
+print(next_greater_elements(arr))
